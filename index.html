@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princesa ♥</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Música de fondo -->
+    <audio id="backgroundMusic" loop>
+        <!-- Reemplaza "tu-musica.mp3" con el nombre de tu archivo de música -->
+        <source src="tu-musica.mp3" type="audio/mpeg">
+        <!-- Música de respaldo de Pixabay -->
+        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_d1718372d8.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Contenedor principal -->
+    <div id="app">
+        <!-- Escena 1: Sobre inicial -->
+        <div id="scene1" class="scene active">
+            <div class="floating-hearts"></div>
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">Keyri♥</div>
+            </div>
+            <p class="instruction">Haz clic en el sobre</p>
+        </div>
+
+        <!-- Escena 2: Carta abierta -->
+        <div id="scene2" class="scene">
+            <div class="letter">
+                <p class="letter-text">
+                    "A veces me detengo a pensar en lo increíble que es que, con tantos kilómetros de por medio, 
+                    sienta que te tengo más cerca que a personas que veo todos los días. Tienes una forma única de hacerte presente."
+                </p>
+            </div>
+            <button class="continue-btn" onclick="nextScene(3)">Continuar ♥</button>
+        </div>
+
+        <!-- Escena 3: Osito -->
+        <div id="scene3" class="scene">
+            <div class="scene-content">
+                <div class="teddy-bear" id="teddyBear">
+                    <div class="bear-body">
+                        <div class="bear-head">
+                            <div class="bear-ear left"></div>
+                            <div class="bear-ear right"></div>
+                            <div class="bear-face">
+                                <div class="bear-eye left"></div>
+                                <div class="bear-eye right"></div>
+                                <div class="bear-nose"></div>
+                                <div class="bear-mouth"></div>
+                            </div>
+                        </div>
+                        <div class="bear-torso"></div>
+                        <div class="bear-arm left"></div>
+                        <div class="bear-arm right"></div>
+                    </div>
+                </div>
+                <div class="heart-sign" id="heartSign">
+                    <p class="message-text">
+                        "Me encanta nuestra amistad, pero confieso que a veces el tiempo que pasamos hablando se me queda corto. 
+                        Siempre me quedo con ganas de conocer un poquito más de lo que piensas y de lo que sueñas."
+                    </p>
+                </div>
+                <p class="instruction">Haz clic en el osito</p>
+            </div>
+        </div>
+
+        <!-- Escena 4: Conejo -->
+        <div id="scene4" class="scene">
+            <div class="scene-content">
+                <div class="kitten" id="kitten">
+                    <div class="kitten-head">
+                        <div class="kitten-ear left"></div>
+                        <div class="kitten-ear right"></div>
+                        <div class="kitten-face">
+                            <div class="kitten-eye left"></div>
+                            <div class="kitten-eye right"></div>
+                            <div class="kitten-nose"></div>
+                            <div class="kitten-whiskers left"></div>
+                            <div class="kitten-whiskers right"></div>
+                        </div>
+                    </div>
+                    <div class="kitten-body"></div>
+                </div>
+                <div class="heart-message" id="heartMessage">
+                    <p class="message-text">
+                        "Eres una de las pocas personas en las que confio, y sabe cosas de mi que no muchos saben. 
+                        Es extraña la forma en la que entraste a mi vida y te ganaste mi confianza."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Escena 5: Cofre -->
+        <div id="scene5" class="scene">
+            <div class="scene-content">
+                <div class="treasure-chest" id="treasureChest">
+                    <div class="chest-lid"></div>
+                    <div class="chest-body"></div>
+                    <div class="chest-glow"></div>
+                </div>
+                <div class="scroll" id="scroll">
+                    <p class="scroll-text">
+                        "Se que no puedo estar cerca tuyo, pero sí te aseguro que hoy eres la notificación que más me alegra el día. 
+                        Desearia poder verte tocarte abrazarte y besarte."
+                    </p>
+                </div>
+                <p class="instruction">Haz clic en el cofre</p>
+            </div>
+        </div>
+
+        <!-- Escena 6: Helado -->
+        <div id="scene6" class="scene">
+            <div class="scene-content">
+                <div class="ice-cream" id="iceCream">
+                    <div class="cone"></div>
+                    <div class="scoop scoop-bottom"></div>
+                    <div class="scoop scoop-middle"></div>
+                    <div class="scoop scoop-top"></div>
+                    <div class="cherry"></div>
+                    <div class="sprinkles"></div>
+                </div>
+                <div class="ice-cream-message" id="iceCreamMessage">
+                    <p class="message-text">
+                        "Me gusta cómo eres. Cuanto más te conozco , más me doy cuenta de que personas 
+                        como tú no se encuentran dos veces. Eres alguien realmente importante para mí."
+                    </p>
+                </div>
+                <p class="instruction">Haz clic en el helado</p>
+            </div>
+        </div>
+
+        <!-- Escena 7: Fresas -->
+        <div id="scene7" class="scene">
+            <div class="scene-content">
+                <div class="strawberries" id="strawberries">
+                    <div class="strawberry strawberry-1">
+                        <div class="strawberry-body"></div>
+                        <div class="strawberry-leaf"></div>
+                        <div class="strawberry-seeds"></div>
+                    </div>
+                    <div class="strawberry strawberry-2">
+                        <div class="strawberry-body"></div>
+                        <div class="strawberry-leaf"></div>
+                        <div class="strawberry-seeds"></div>
+                    </div>
+                    <div class="strawberry strawberry-3">
+                        <div class="strawberry-body"></div>
+                        <div class="strawberry-leaf"></div>
+                        <div class="strawberry-seeds"></div>
+                    </div>
+                </div>
+                <div class="strawberry-message" id="strawberryMessage">
+                    <p class="message-text">
+                        "Me encanta lo que tenemos, pero no te miento si te digo que me genera mucha curiosidad saber qué pasaría 
+                        si estuviéramos juntos, talvez la distancia sea un pequeño obstaculo que retiene el poder quererte."
+                    </p>
+                </div>
+                <p class="instruction">Haz clic en las fresas</p>
+            </div>
+        </div>
+
+        <!-- Escena 8: Hello Kitty -->
+        <div id="scene8" class="scene">
+            <div class="scene-content">
+                <div class="hello-kitty" id="helloKitty">
+                    <div class="kitty-head-hk">
+                        <div class="kitty-ear-hk left"></div>
+                        <div class="kitty-ear-hk right"></div>
+                        <div class="kitty-bow">
+                            <div class="bow-left"></div>
+                            <div class="bow-right"></div>
+                            <div class="bow-center"></div>
+                        </div>
+                        <div class="kitty-face-hk">
+                            <div class="kitty-eye-hk left"></div>
+                            <div class="kitty-eye-hk right"></div>
+                            <div class="kitty-nose-hk"></div>
+                            <div class="kitty-whisker-hk whisker-left-top"></div>
+                            <div class="kitty-whisker-hk whisker-left-bottom"></div>
+                            <div class="kitty-whisker-hk whisker-right-top"></div>
+                            <div class="kitty-whisker-hk whisker-right-bottom"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hello-kitty-message" id="helloKittyMessage">
+                    <p class="message-text">
+                        "No sé si te lo digo lo suficiente, pero ocupas un lugar muy importante en mi vida. No solo te quiero mucho, 
+                        sino que admiro profundamente la persona en la que te conviertes cada día."
+                    </p>
+                </div>
+                <p class="instruction">Haz clic en el Gatito 
+                </p>
+            </div>
+        </div>
+
+        <!-- Escena 9: Lotso y Flores de Loto -->
+        <div id="scene9" class="scene">
+            <div class="scene-content">
+                <div class="lotso-bear" id="lotsoBear">
+                    <div class="lotso-head">
+                        <div class="lotso-ear left"></div>
+                        <div class="lotso-ear right"></div>
+                        <div class="lotso-face">
+                            <div class="lotso-eye left"></div>
+                            <div class="lotso-eye right"></div>
+                            <div class="lotso-snout">
+                                <div class="lotso-nose"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lotso-body">
+                        <div class="lotso-belly"></div>
+                    </div>
+                </div>
+                <div class="lotus-flowers" id="lotusFlowers"></div>
+                <div class="final-message" id="finalMessage">
+                    <p class="final-text">
+                        "Gracias por ser mi lugar seguro a la distancia. Disfruto mucho de tu precensia en mi vida, aunque no puedo evitar 
+                        sonreír al pensarte."
+                    </p>
+                </div>
+                <p class="instruction">Haz clic en Lotso</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
